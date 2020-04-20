@@ -21,13 +21,14 @@ from django.views.generic import TemplateView
 
 
 additional_urls = [
-    path('api/', include('dehaat.api.urls'))
+    path('api/', include('dehaat.api.urls')),
+    path('upload', TemplateView.as_view(template_name='upload_balance_sheet_pdf.html')),        # balance sheet upload input form
 ]
 
+# if not API_ENABLED in env file, endpoints won't be available
 if not settings.API_ENABLED:
     additional_urls = []
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('upload', TemplateView.as_view(template_name='upload_balance_sheet_pdf.html')),
-] + additional_urls + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + additional_urls

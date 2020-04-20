@@ -18,9 +18,13 @@ import environ
 
 env = environ.Env()
 
+# ROOT DIRECTORY of the project
 ROOT_DIR = environ.Path(__file__) - 2
+
+# Directory where all apps are available
 APPS_DIR = ROOT_DIR.path('dehaat')
 
+# environment file read.
 env.read_env(str(ROOT_DIR.path('.env.local')))
 
 # Quick-start development settings - unsuitable for production
@@ -30,7 +34,7 @@ env.read_env(str(ROOT_DIR.path('.env.local')))
 SECRET_KEY = env('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['localhost']
 
@@ -98,10 +102,10 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+# PostgreSQL database is used with Postgis engine
 DATABASES = {
     'default': env.db('DATABASE_URL'),
 }
-
 DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
 
 # Password validation
@@ -140,8 +144,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = '/static/'
-
+# True if S3 needs to be used, otherwise False
 USE_S3 = os.getenv('USE_S3')
 
 if USE_S3:
@@ -164,6 +167,7 @@ if USE_S3:
     PRIVATE_MEDIA_LOCATION = 'private'
     PRIVATE_FILE_STORAGE = 'hello_django.storage_backends.PrivateMediaStorage'
 else:
+    # files will be stored locally if USE_S3 is False
     STATIC_URL = '/static/'
     STATIC_ROOT = os.path.join(str(ROOT_DIR), 'static')
     MEDIA_URL = '/media/'
@@ -171,5 +175,5 @@ else:
 
 # STATICFILES_DIRS = (os.path.join(str(ROOT_DIR), 'static'),)
 
-BASE_URL = env('BASE_URL')
+# To make API endpoints available or unavailable
 API_ENABLED = env.bool('API_ENABLED')
