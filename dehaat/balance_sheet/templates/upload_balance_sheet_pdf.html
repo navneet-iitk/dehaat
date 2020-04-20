@@ -1,22 +1,52 @@
 <html lang="en">
-<head>
-    <!--META TAGS-->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Data Parsing</title>
-</head>
-<body>
-    <form action="{% url 'balance-sheet-parse' %}" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        <label>Query yariable </label>
-        <input id="query_variable" type="text" name="query_variable"><br>
-        <label>Query year </label>
-        <input id="query_year" type="text" name="query_year"><br>
-        <label>Please upload Balance Sheet: </label>
-        <input id="browse" type="file" name="balance_sheet"><br>
-        <input type="submit" value="Submit">
-    </form>
-</body>
+    <head>
+        <!--META TAGS-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Data Parsing</title>
+        <style type="text/css">
+            h1 {
+                margin: 10px;
+                text-align: center;
+            }
+            label {
+                text-align: right;
+                width: 200px;
+                display: block;
+                float: left;
+                clear: left;
+                padding: 5px;
+                margin-right: 10px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                margin-left: 10px;
+            }
+            input {
+                text-align: center;
+                width: 200px;
+                margin: 5px;
+                padding: 5px;
+            }
+            .my_centered_buttons { display: flex; justify-content: center; }
+        </style>
+    </head>
+    <body>
+        <div class="my_centered_buttons">
+            <h1> Data Parsing</h1>
+        </div>
+        <div class="my_centered_buttons">
+            <form action="{% url 'balance-sheet-parse' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <label>Query variable </label>
+                <input id="query_variable" type="text" name="query_variable"><br><br>
+                <label>Query year </label>
+                <input id="query_year" type="text" name="query_year"><br><br>
+                <label>Please upload Balance Sheet: </label>
+                <input id="browse" type="file" name="balance_sheet"><br><br>
+                <input id="submit" type="submit" value="Submit">
+            </form>
+        </div>
+    </body>
 </html>
 
 

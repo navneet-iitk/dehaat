@@ -4,11 +4,18 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>CSV Download</title>
+        <style type="text/css">
+            .my_centered_buttons { display: flex; justify-content: center; align-items: center;}
+        </style>
     </head>
     <body>
-        {% if query_value %} <p> Value of {{ query_variable }} in {{ query_year }}: {{ query_value }} </p> {% endif %}
-        <a href={{ csv_file }} download= {{ csv_file }}>
-            <button type="button">Download CSV</button>
-        </a>
+        <div class="my_centered_buttons">
+            {% if query_value %} <p> Value of {{ query_variable }} in {{ query_year }}: {{ query_value }} </p> {% endif %}
+        </div>
+        <div class="my_centered_buttons">
+            <a href={{ csv_file }} download= {{ csv_file }}>
+                <button type="button">Download CSV</button>
+            </a>
+        </div>
     </body>
 </html>
