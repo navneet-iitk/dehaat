@@ -32,3 +32,4 @@ Steps to follow for setting up the project:
 18. Additionally, Another API to list all the uploads with respective queries and CSVs are available at 
     `http://localhost:{$PORT}/api/v1/balance_sheet/list`. This endpoint is commented at the present moment. If needed, 
     one can uncomment and look through the data.
+19. Python script to convert pdf file to csv is in the root directory (pdf_to_csv.py), as required at the end of task 1.
