@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+    <!--META TAGS-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Data Parsing</title>
+</head>
+<body>
+    <form action="{% url 'balance-sheet-parse' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label>Query yariable </label>
+        <input id="query_variable" type="text" name="query_variable"><br>
+        <label>Query year </label>
+        <input id="query_year" type="text" name="query_year"><br>
+        <label>Please upload Balance Sheet: </label>
+        <input id="browse" type="file" name="balance_sheet"><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+
+
