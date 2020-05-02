@@ -1,5 +1,5 @@
 import sys, os
-from dehaat.api.v1 import utils as v1_utils
+from pdf_to_csv.api.v1 import utils as v1_utils
 
 if __name__ == '__main__':
     '''

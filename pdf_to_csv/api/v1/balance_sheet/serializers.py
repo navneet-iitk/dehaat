@@ -1,8 +1,8 @@
 from rest_framework import serializers
 import os
 from django.core.files.base import ContentFile
-from dehaat.balance_sheet import models as balance_sheet_models
-from dehaat.api.v1 import utils as v1_utils
+from pdf_to_csv.balance_sheet import models as balance_sheet_models
+from pdf_to_csv.api.v1 import utils as v1_utils
 
 
 class BalanceSheetUploadSerializer(serializers.Serializer):

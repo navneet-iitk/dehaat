@@ -22,7 +22,7 @@ env = environ.Env()
 ROOT_DIR = environ.Path(__file__) - 2
 
 # Directory where all apps are available
-APPS_DIR = ROOT_DIR.path('dehaat')
+APPS_DIR = ROOT_DIR.path('pdf_to_csv')
 
 # environment file read.
 env.read_env(str(ROOT_DIR.path('.env.local')))
@@ -59,7 +59,7 @@ THIRD_PARTY_APPS = [
 ]
 
 LOCAL_APPS = [
-    'dehaat.balance_sheet',
+    'pdf_to_csv.balance_sheet',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS

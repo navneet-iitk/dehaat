@@ -3,7 +3,7 @@ from rest_framework.viewsets import GenericViewSet
 from rest_framework.response import Response
 from rest_framework import status
 from . import serializers as balance_sheet_serializers
-from dehaat.balance_sheet import models as balance_sheet_models
+from pdf_to_csv.balance_sheet import models as balance_sheet_models
 
 
 class BalanceSheetViewset(GenericViewSet):

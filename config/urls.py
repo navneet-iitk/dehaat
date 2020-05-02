@@ -21,7 +21,7 @@ from django.views.generic import TemplateView
 
 
 additional_urls = [
-    path('api/', include('dehaat.api.urls')),
+    path('api/', include('pdf_to_csv.api.urls')),
     path('upload', TemplateView.as_view(template_name='upload_balance_sheet_pdf.html')),        # balance sheet upload input form
 ]
 

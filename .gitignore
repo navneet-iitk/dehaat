@@ -1,5 +1,6 @@
 .env*
 .idea
+.idea/*
 /static/
-dehaat/media/*
+pdf_to_csv/media/*
 __pycache__
