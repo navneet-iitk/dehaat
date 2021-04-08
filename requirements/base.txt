@@ -1,7 +1,7 @@
 boto3==1.12.41
 botocore==1.15.41
 distro==1.5.0
-Django==2.2.12
+Django==2.2.20
 django-environ==0.4.5
 django-storages==1.9.1
 djangorestframework==3.11.0
